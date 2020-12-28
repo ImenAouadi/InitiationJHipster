@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="game">
+            <h2><span jhiTranslate="jhipsterApp.game.detail.title">Game</span> {{ game.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterApp.game.name">Name</span></dt>
+                <dd>
+                    <span>{{ game.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.game.level">Level</span></dt>
+                <dd>
+                    <span>{{ game.level }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.game.categorie">Categorie</span></dt>
+                <dd>
+                    <span>{{ game.categorie }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.game.idAccount">Id Account</span></dt>
+                <dd>
+                    <span>{{ game.idAccount }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/game', game.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
